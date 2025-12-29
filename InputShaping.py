@@ -11,7 +11,7 @@ class InputShaping(Script):
     def getSettingDataString(self):
         return json.dumps({
             'name': 'Input Shaping',
-            'key': 'Input Shaping',
+            'key': 'InputShaping',
             'metadata': {},
             'version': 2,
             'settings': {
@@ -62,9 +62,9 @@ class InputShaping(Script):
                         params = ""
                         if gc == 'voldftm':
                             params = "S11"
-                        else if gc == 'oldftm':
+                        elif gc == 'oldftm':
                             params = "S1 X11 Y11"
-                        else if gc == 'ftm':
+                        elif gc == 'ftm':
                             params = "S1 XY C11"
                         if params:
                             lines[j] += '\n;TYPE:INPUTSHAPING\nM493 %s D0 ;Enable ZVD Input Shaping' % params
@@ -72,11 +72,11 @@ class InputShaping(Script):
                     if gc in ('oldftm','voldftm'):
                         lines[j] += '\n;TYPE:INPUTSHAPING\nM493 A%f ;(Hz) X Input Shaping Test' % hz
                         lines[j] += '\nM493 B%f ;(Hz) Y Input Shaping Test' % hz
-                    else if gc == 'ftm':
+                    elif gc == 'ftm':
                         lines[j] += '\n;TYPE:INPUTSHAPING\nM493 XY A%f ;(Hz) XY Input Shaping Test' % hz
-                    else if gc == 'oldis':
+                    elif gc == 'oldis':
                         lines[j] += '\n;TYPE:INPUTSHAPING\nM593 F%f ;(Hz) Input Shaping Test' % hz
-                    else if gc == 'is':
+                    elif gc == 'is':
                         lines[j] += '\n;TYPE:INPUTSHAPING\nM593 XY F%f ;(Hz) Input Shaping Test' % hz
             data[i] = '\n'.join(lines)
 
