@@ -11,7 +11,7 @@ class InputShaping(Script):
     def getSettingDataString(self):
         return json.dumps({
             'name': 'Input Shaping',
-            'key': 'Input Shaping',
+            'key': 'InputShaping',
             'metadata': {},
             'version': 2,
             'settings': {
